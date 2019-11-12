@@ -39,6 +39,10 @@ Route::prefix('/user/')->middleware(['auth', 'can:manage'])->group(function () {
     Route::post('/update', 'UserController@update')->name('user.update');
 });
 
+Route::prefix('/export')->middleware(['auth', 'can:manage'])->group(function () {
+    Route::get('{project}', 'ExportController@export')->name('project.export');
+});
+
 Route::view('sign-in', 'admin.login')->name('login');
 
 Route::view('sign-up', 'register')->name('register')->middleware(['auth', 'can:manage']);

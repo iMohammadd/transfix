@@ -1,7 +1,7 @@
-#Transfix  
+## Transfix  
 a laravel application for wordpress translators team and work management
 
-#Required
+## Required
 - PHP 7.2+
 - BCMath PHP Extension
 - Ctype PHP Extension
@@ -12,7 +12,7 @@ a laravel application for wordpress translators team and work management
 - Tokenizer PHP Extension
 - XML PHP Extension  
 
-#Installation  
+## Installation  
 clone this repository in your server  
 `git clone https://github.com/iMohammadd/transfix`
 then install dependencies via composer  
