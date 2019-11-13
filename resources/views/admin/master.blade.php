@@ -55,6 +55,11 @@
                         </ul>
                     </div>
                 @endif
+                @if (session()->has('message'))
+                    <div class="alert alert-info">
+                        {!!  session()->get('message') !!}
+                    </div>
+                @endif
                 @yield('content')
 
             </div>
@@ -99,7 +104,7 @@
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                 <form method="post" action="{{ route('logout') }}">
                     @csrf
-                    <button class="btn btn-primary" href="login.html">Logout</button>
+                    <button class="btn btn-primary">Logout</button>
                 </form>
             </div>
         </div>

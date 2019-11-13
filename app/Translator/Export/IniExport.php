@@ -8,7 +8,7 @@ class IniExport extends Driver {
 
     public function export()
     {
-        $this->file = $this->path . $this->name . strtotime(Carbon::now()) . '_' . uniqid() .'.' . $this->ext;
+        $this->file = $this->path . $this->name . "_" . strtotime(Carbon::now()) . '_' . uniqid() .'.' . $this->ext;
         //dd($this->array);
         $fh = fopen($this->file, 'w');
 

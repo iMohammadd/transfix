@@ -16,6 +16,6 @@ class ExportController extends Controller
 
         $exporter = 'App\Translator\Export\\' . $project->type . 'Export';
         $r = new $exporter($array, $name, $ext);
-        return $r->response();
+        return response()->download($r->response(), $project->title . '.' . $ext)->deleteFileAfterSend();
     }
 }

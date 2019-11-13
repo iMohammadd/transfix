@@ -58,4 +58,11 @@ class ProjectController extends Controller
 
         return redirect()->route('project.show', $project);
     }
+
+    public function delete(Project $project)
+    {
+        $project->delete();
+        session()->flash('message', "Project <b>{$project->title}</b> was deleted");
+        return redirect()->route('dashboard.index');
+    }
 }

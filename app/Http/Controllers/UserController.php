@@ -27,4 +27,30 @@ class UserController extends Controller
 
         return redirect()->route('user.index');
     }
+
+    public function edit()
+    {
+        $user = auth()->user();
+        return view('admin.dashboard.user.edit', compact('user'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'      =>  'required',
+            'password'  =>  'nullable|confirmed'
+        ]);
+
+        $input['name']  =  $request->input('name');
+        if($request->input('password') != (null || "") ) {
+            $input['password']  =   bcrypt($request->input('password'));
+        }
+
+        $user = User::find(auth()->id());
+        $user->update($input);
+
+        session()->flash('message', "Your profile updated");
+
+        return redirect()->route('dashboard.index');
+    }
 }
