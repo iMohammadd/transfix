@@ -23,7 +23,7 @@ services:
       - proxy_service_network
 
   php:
-    image: imohammadd/laravel-docker-php:0.0.1
+    image: kamerk22/laravel-alpine:latest
     container_name: transfix-app
     volumes:
       - ./:/var/www
