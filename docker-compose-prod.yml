@@ -18,6 +18,7 @@ services:
     environment:
       - VIRTUAL_HOST=weblate.ir
       - LETSENCRYPT_HOST=weblate.ir
+      - LETSENCRYPT_EMAIL=imohammadd@gmail.com
     networks:
       - proxy_service_network
 
